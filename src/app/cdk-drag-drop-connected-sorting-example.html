@@ -1,0 +1,58 @@
+<!-- <div class="example-container">
+  <h2>To do</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="todoListConfig.status.todo"
+    [cdkDropListConnectedTo]="[inProgressList,doneList,todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of todoListConfig.status.todo" cdkDrag>{{item}}</div>
+    <input/>
+    <button (click)="addNewCard(todo)">Add a Card</button>
+  </div>
+</div>
+<div class="example-container">
+  <h2>In Progress</h2>
+
+  <div
+    cdkDropList
+    #inProgressList="cdkDropList"
+    [cdkDropListData]="todoListConfig.status.inProgress"
+    [cdkDropListConnectedTo]="[inProgressList,todoList,doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of todoListConfig.status.inProgress" cdkDrag>{{item}}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Done</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="todoListConfig.status.done"
+    [cdkDropListConnectedTo]="[inProgressList,todoList,doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of todoListConfig.status.done" cdkDrag>{{item}}</div>
+  </div>
+</div> -->
+
+<div class="example-container" *ngFor="let card of todoListConfig.cards">
+  <h2>{{card.name}}</h2>
+
+  <div
+    cdkDropList
+    id="{{card.id}}"
+    [cdkDropListData]="card.list"
+    [cdkDropListConnectedTo]="card.connectedToObj"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of card.list" cdkDrag>{{item}}</div>
+  </div>
+</div>
+<!-- <button (click)="aligne()">aligne</button> -->
+
